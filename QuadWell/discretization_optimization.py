@@ -35,16 +35,13 @@ class DataFilter(BaseEstimator):
 
 traj_paths = glob('data/*.npy')
 X = [np.load(traj_path) for traj_path in traj_paths]
-X = [x[:50] for x in X]
 
 xmin, xmax = -1.2, 1.2
 tau = 25
-# ('filter', DataFilter(fraction=0.05)),
 
-cluster = NDGrid(min=xmin, max=xmax, n_bins_per_feature=200)
-ctrajs = cluster.fit_transform(X)
-
-model = Pipeline([('msm', BayesianMSM(lag=tau))])
-model.fit(ctrajs)
+model = Pipeline([('filter', DataFilter(fraction=0.05)),
+                  ('cluster',NDGrid(min=xmin, max=xmax, n_bins_per_feature=200)),
+                  ('msm', MaximumLikelihoodMSM(lag=tau))])
+model.fit(X)
 
 
