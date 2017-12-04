@@ -27,11 +27,11 @@ class DataFilter(BaseEstimator):
         if not isinstance(X, list):
             raise TypeError('X must be of list type')
         self.lengths = [int(x.shape[0]*self.fraction) for x in X]
+        return self
 
     def transform(self, X):
         if self.mode == 'initial':
             return [x[:i] for x, i in zip(*[X, self.lengths])]
-
 
 traj_paths = glob('data/*.npy')
 X = [np.load(traj_path) for traj_path in traj_paths]
@@ -42,6 +42,7 @@ tau = 25
 model = Pipeline([('filter', DataFilter(fraction=0.05)),
                   ('cluster',NDGrid(min=xmin, max=xmax, n_bins_per_feature=200)),
                   ('msm', MaximumLikelihoodMSM(lag=tau))])
+
 model.fit(X)
 
 
