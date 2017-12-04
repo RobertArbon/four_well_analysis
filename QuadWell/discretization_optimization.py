@@ -28,7 +28,7 @@ class DataFilter(BaseEstimator):
             raise TypeError('X must be of list type')
         self.lengths = [int(x.shape[0]*self.fraction) for x in X]
 
-    def predict(self, X):
+    def transform(self, X):
         if self.mode == 'initial':
             return [x[:i] for x, i in zip(*[X, self.lengths])]
 
