@@ -32,10 +32,9 @@ cv: 5
 dataset_loader:
   name: numpy
   params:
-    filenames: ./data/100.0pc/*.npy
+    filenames: ./*.npy
 
 trials:
     uri: sqlite:///osprey-trials.db
-    project_name: 100.0pc
 
 random_seed: 42
