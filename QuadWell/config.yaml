@@ -5,12 +5,6 @@ strategy:
   name: grid
 
 search_space:
-  filter__fraction:
-    min: 0.005
-    max: 1
-    num: 5
-    var: float
-    warp: log
 
   cluster__n_bins_per_feature:
     min: 10
@@ -22,7 +16,9 @@ search_space:
   msm__score_k:
     min: 2
     max: 6
-    type: int
+    num: 5
+    var_type: int
+    type: jump
 
   msm__score_method:
     choices:
@@ -36,8 +32,10 @@ cv: 5
 dataset_loader:
   name: numpy
   params:
-    filenames: ./data/*.npy
+    filenames: ./data/100.0pc/*.npy
+
 trials:
     uri: sqlite:///osprey-trials.db
+    project_name: 100.0pc
 
 random_seed: 42
