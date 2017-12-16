@@ -1,8 +1,10 @@
 #!/bin/bash
-#SBATCH --array=1-15
-#SBATCH --time=24:00:00
-#SBATCH --ntasks=1
+#SBATCH --time=01:00:00
 #SBATCH --mem-per-cpu=4000
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=5
+#SBATCH --cpus-per-task=1
+
 
 export MKL_NUM_THREADS=1
 export NUMEXPR_NUM_THREADS=1
@@ -18,6 +20,6 @@ echo SLURM job ID is $SLURM_JOBID
 echo This jobs runs on the following machines:
 echo $SLURM_JOB_NODELIST
 
-osprey worker $config.yaml -n $num -j 1 --seed $SLURM_ARRAY_TASK_ID > $config.$SLURM_ARRAY_TASK_ID.log 2>&1 
+osprey worker $config.yaml -n 1500 -j 5  > $config.$SLURM_JOBID.log 2>&1 
 
 
