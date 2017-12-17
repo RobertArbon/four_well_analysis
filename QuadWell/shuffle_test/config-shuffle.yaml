@@ -30,14 +30,13 @@ cv:
   params:
     n_splits: 20 
     test_size: 0.5
-    random_state: 42
 
 dataset_loader:
   name: numpy
   params:
-    filenames: ./*.npy
+    filenames: ../data/000.5pc-split/*.npy
 
 trials:
     uri: sqlite:///osprey-trials.db
-    project_name: rs_42
+    project_name: split 
 
