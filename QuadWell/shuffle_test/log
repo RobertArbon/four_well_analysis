@@ -1,0 +1,984 @@
+======================================================================
+= osprey is a tool for machine learning hyperparameter optimization. =
+======================================================================
+
+osprey version:      1.2.0dev
+time:                December 14, 2017 11:58 AM
+hostname:            vpn-user-248-086.nomadic.bris.ac.uk
+cwd:                 /Users/robert_arbon/Google Drive/Research/Hyperparameter_Optimisation/Code/QuadWell/osprey_test
+pid:                 94268
+
+Loading config file:     config-shuffle.yaml...
+
+msmbuilder version:  3.9.0.dev0+ca643f9cc3e8cbc3cb164e0d374d37ea0eceaa84
+mdtraj version:      1.8.0
+
+
+Loading dataset...
+
+Dataset contains 100 element(s) with out labels
+The elements have shape: [(422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), (422, 1), ...]
+Instantiated estimator:
+  Pipeline(steps=[('cluster', NDGrid(max=1.2, min=-1.2, n_bins_per_feature=200)), ('msm', MaximumLikelihoodMSM(connectivity='largest', count_mode='sliding',
+           dt_traj='1 step', lag=25, maxerr=1e-08, maxiter=1000000,
+           mincount_connectivity='1/n', reversible=True, score_k=10,
+           score_method='VAMP2', sparse=False, statdist_constraint=None))])
+Hyperparameter search space:
+  cluster__n_bins_per_feature	(enum)    choices = (10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410, 420, 430, 440, 450, 460, 470, 480, 490, 500)
+  msm__score_k             	(enum)    choices = (4)
+  msm__score_method        	(enum)    choices = (vamp2)
+
+----------------------------------------------------------------------
+Beginning iteration                                             1 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 100 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 10, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.002 s)
+
+[(2.99801660322434, 21100, 2.987839331832557, 21100, 0.14425897598266602), (2.977409115272959, 21100, 3.003095214035745, 21100, 0.049835920333862305), (3.038086769031562, 21100, 2.954837062992101, 21100, 0.048341989517211914), (3.005266571233189, 21100, 2.9058000382841533, 21100, 0.048840999603271484), (2.9990907527698596, 21100, 3.0084790346470687, 21100, 0.04896187782287598)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.003574
+(best score so far   = 3.069606)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             2 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 101 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 20, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.005 s)
+
+[(3.0688834442118424, 21100, 3.0589012604293297, 21100, 0.061408042907714844), (3.0329680663073493, 21100, 3.0868222366451845, 21100, 0.07520914077758789), (3.102093944919444, 21100, 3.0300077914100947, 21100, 0.08581900596618652), (3.062121440313376, 21100, 2.9889263710133616, 21100, 0.07187795639038086), (3.07662061659389, 21100, 3.071096436278144, 21100, 0.1142129898071289)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.068538
+(best score so far   = 3.069606)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             3 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 102 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 30, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.087404929338546, 21100, 3.0755890046036765, 21100, 0.08159303665161133), (3.049723864155661, 21100, 3.1066331846671207, 21100, 0.07674193382263184), (3.1207063751193256, 21100, 3.046750062400885, 21100, 0.08243489265441895), (3.0782082923494283, 21100, 3.008841649366813, 21100, 0.07900810241699219), (3.095895231360679, 21100, 3.08721763535853, 21100, 0.07574796676635742)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.086388
+(best score so far   = 3.086388)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             4 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 103 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 40, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.002 s)
+
+[(3.093581548240429, 21100, 3.0813253198854054, 21100, 0.09866809844970703), (3.0554058989707156, 21100, 3.1135164702024283, 21100, 0.06940197944641113), (3.1244478253883345, 21100, 3.0554046375379555, 21100, 0.07434296607971191), (3.081078502760543, 21100, 3.0146623087609927, 21100, 0.08686089515686035), (3.1011072950044434, 21100, 3.0944324191784935, 21100, 0.06653690338134766)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.091124
+(best score so far   = 3.091124)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             5 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 104 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 50, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.002 s)
+
+[(3.0951122304950447, 21100, 3.083312525840244, 21100, 0.06638479232788086), (3.059015154477927, 21100, 3.1130975665934972, 21100, 0.09656095504760742), (3.1250086873100926, 21100, 3.0576970306103326, 21100, 0.0684959888458252), (3.081476671926644, 21100, 3.0173915156678546, 21100, 0.06461906433105469), (3.1044497068968093, 21100, 3.093187673347285, 21100, 0.0826568603515625)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.093012
+(best score so far   = 3.093012)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             6 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 105 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 60, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.0975127056476737, 21100, 3.0869855288346817, 21100, 0.08023309707641602), (3.059615511881647, 21100, 3.1187504350240443, 21100, 0.1154630184173584), (3.1270470855203065, 21100, 3.061368640880599, 21100, 0.11877703666687012), (3.0836586054885187, 21100, 3.0217846059993745, 21100, 0.08814311027526855), (3.1080496304745022, 21100, 3.0969784365422828, 21100, 0.09325599670410156)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.095177
+(best score so far   = 3.095177)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             7 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 106 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 70, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.09793141671559, 21100, 3.0844316289385807, 21100, 0.11587405204772949), (3.058673823239487, 21100, 3.1172664303470454, 21100, 0.10912489891052246), (3.1269153970732377, 21100, 3.0599053925910042, 21100, 0.09818100929260254), (3.0812698003416084, 21100, 3.021890914320527, 21100, 0.0959010124206543), (3.105768485357709, 21100, 3.0969961821525693, 21100, 0.1146390438079834)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.094112
+(best score so far   = 3.095177)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             8 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 107 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 80, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.097177350364942, 21100, 3.0880236049594068, 21100, 0.13300395011901855), (3.0593666058038913, 21100, 3.120538563165154, 21100, 0.09900403022766113), (3.128744794133237, 21100, 3.061795762607341, 21100, 0.08452105522155762), (3.0816409621546037, 21100, 3.023875633990828, 21100, 0.08232593536376953), (3.1063672864204297, 21100, 3.099647019795518, 21100, 0.08673715591430664)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.094659
+(best score so far   = 3.095177)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             9 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 108 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 90, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.097085519459533, 21100, 3.0912970837274982, 21100, 0.10557389259338379), (3.0614893079526375, 21100, 3.1215409261539713, 21100, 0.10776400566101074), (3.1269902224322657, 21100, 3.0648724716897227, 21100, 0.11322593688964844), (3.083284833538081, 21100, 3.0256535613545474, 21100, 0.12262105941772461), (3.107092300024261, 21100, 3.1014607186747796, 21100, 0.11564207077026367)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.095188
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            10 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 109 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 100, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.0969405876039064, 21100, 3.0888591970611263, 21100, 0.13541102409362793), (3.060027273065094, 21100, 3.1198445629386637, 21100, 0.13474488258361816), (3.125705336416071, 21100, 3.063863150825334, 21100, 0.12541508674621582), (3.083589127980543, 21100, 3.0240835366610996, 21100, 0.12790894508361816), (3.1073343199923356, 21100, 3.0989860584464073, 21100, 0.12981605529785156)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.094719
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            11 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 110 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 110, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.006 s)
+
+[(3.0953346271329325, 21100, 3.0898570394914397, 21100, 0.13074398040771484), (3.0576586726527513, 21100, 3.1217412464493, 21100, 0.1353139877319336), (3.1262907524052728, 21100, 3.0634041277834463, 21100, 0.10902786254882812), (3.080589702186619, 21100, 3.0261736565897417, 21100, 0.07761883735656738), (3.1062852564680297, 21100, 3.1003802861318444, 21100, 0.08162999153137207)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.093232
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            12 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 111 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 120, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.0964323049618403, 21100, 3.0914355333059773, 21100, 0.09135603904724121), (3.0595867810684956, 21100, 3.122385535307927, 21100, 0.11900901794433594), (3.1274406769825442, 21100, 3.0645277445064134, 21100, 0.08633112907409668), (3.082564292553797, 21100, 3.025669573661502, 21100, 0.08484005928039551), (3.1060893968891867, 21100, 3.1019316322132875, 21100, 0.08414411544799805)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.094423
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            13 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 112 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 130, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.095597803263245, 21100, 3.090172310399535, 21100, 0.12350702285766602), (3.058543411124412, 21100, 3.122515447613257, 21100, 0.13996195793151855), (3.124855739031971, 21100, 3.0655375085924286, 21100, 0.17302489280700684), (3.080179924854868, 21100, 3.026062256759672, 21100, 0.16958308219909668), (3.1033879413545233, 21100, 3.101836747166507, 21100, 0.11351704597473145)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.092513
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            14 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 113 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 140, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.0943390632671965, 21100, 3.0921117759074743, 21100, 0.12257099151611328), (3.0572579865405616, 21100, 3.1239503924719174, 21100, 0.13643908500671387), (3.12326517128196, 21100, 3.066647683581691, 21100, 0.13345599174499512), (3.0804937868676547, 21100, 3.0283031918214656, 21100, 0.1301579475402832), (3.1049667746621363, 21100, 3.1021723264332772, 21100, 0.15024900436401367)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.092065
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            15 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 114 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 150, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.094643710633925, 21100, 3.09189649518288, 21100, 0.1375439167022705), (3.05581329867259, 21100, 3.125260434558813, 21100, 0.1398921012878418), (3.121906952132436, 21100, 3.0678258153516276, 21100, 0.12862396240234375), (3.0805115543149775, 21100, 3.0280202660778053, 21100, 0.13494205474853516), (3.104687367221839, 21100, 3.1022756133839056, 21100, 0.1250138282775879)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.091513
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            16 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 115 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 160, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.0949907018377254, 21100, 3.092477887707662, 21100, 0.1719808578491211), (3.0579899849734042, 21100, 3.1245194477753233, 21100, 0.16521787643432617), (3.125294799844322, 21100, 3.0660647233337937, 21100, 0.12662887573242188), (3.081967242304402, 21100, 3.027692906370466, 21100, 0.1400289535522461), (3.105083234124466, 21100, 3.1029336018876768, 21100, 0.11752891540527344)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.093065
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            17 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 116 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 170, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.092435246719486, 21100, 3.0942749095578486, 21100, 0.17050600051879883), (3.055719515830453, 21100, 3.12575418365428, 21100, 0.16037416458129883), (3.124721159780654, 21100, 3.0672194349541977, 21100, 0.15833401679992676), (3.0782000163778287, 21100, 3.0305097068172633, 21100, 0.15743780136108398), (3.103836105045816, 21100, 3.103589638397004, 21100, 0.14728999137878418)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.090982
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            18 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 117 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 180, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.0933449522877643, 21100, 3.0946295130184462, 21100, 0.1767120361328125), (3.0582043870436992, 21100, 3.125699776663179, 21100, 0.17163681983947754), (3.122787640601859, 21100, 3.0687206655115515, 21100, 0.1471571922302246), (3.0796485378440153, 21100, 3.0300955969032457, 21100, 0.15925312042236328), (3.105237438972197, 21100, 3.103952768722932, 21100, 0.19692587852478027)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.091845
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            19 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 118 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 190, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.091570346508319, 21100, 3.095555317827897, 21100, 0.20539402961730957), (3.058214586875961, 21100, 3.125898978706546, 21100, 0.16901803016662598), (3.120855820879941, 21100, 3.0692532377226995, 21100, 0.15492606163024902), (3.0801912562271374, 21100, 3.0305873863704655, 21100, 0.15259313583374023), (3.103617790668611, 21100, 3.105170468507026, 21100, 0.16305017471313477)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.090890
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            20 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 119 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 200, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.002 s)
+
+[(3.0917271202462446, 21100, 3.094613757139718, 21100, 0.21541810035705566), (3.0549494682812925, 21100, 3.1261361932366514, 21100, 0.19383692741394043), (3.1212648194067727, 21100, 3.069285736210947, 21100, 0.16414904594421387), (3.078988697414009, 21100, 3.0298109335350114, 21100, 0.17281389236450195), (3.1035479378514883, 21100, 3.1042235875732853, 21100, 0.16881299018859863)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.090096
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            21 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 120 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 210, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.092803576295611, 21100, 3.0944258344818953, 21100, 0.20118999481201172), (3.0553194132804764, 21100, 3.126479944800824, 21100, 0.21425914764404297), (3.1202088258745913, 21100, 3.068756958353723, 21100, 0.1842491626739502), (3.0765720423875336, 21100, 3.0304686790274147, 21100, 0.18781495094299316), (3.101395761149615, 21100, 3.1051661484286566, 21100, 0.2191448211669922)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.089260
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            22 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 121 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 220, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.0915593978495965, 21100, 3.096158208600084, 21100, 0.19627094268798828), (3.055299103676815, 21100, 3.1279074443194865, 21100, 0.23450303077697754), (3.1228007934390547, 21100, 3.0693624206610526, 21100, 0.19011402130126953), (3.075160071517689, 21100, 3.0327874145952816, 21100, 0.21018195152282715), (3.103039803631911, 21100, 3.1055840552874803, 21100, 0.20921897888183594)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.089572
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            23 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 122 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 230, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.005 s)
+
+[(3.090121613002612, 21100, 3.095749579026164, 21100, 0.24005508422851562), (3.0562152784832617, 21100, 3.1266229574750235, 21100, 0.2708728313446045), (3.118129673114919, 21100, 3.0706839888373603, 21100, 0.31022000312805176), (3.073971476181426, 21100, 3.0317640012654707, 21100, 0.4139900207519531), (3.102512108306235, 21100, 3.105074530212651, 21100, 0.23790311813354492)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.088190
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            24 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 123 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 240, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.0882980090710292, 21100, 3.0980802198092947, 21100, 0.27656006813049316), (3.0557179519012494, 21100, 3.127201415544014, 21100, 0.23215293884277344), (3.1197376023778665, 21100, 3.0708525957881037, 21100, 0.46596312522888184), (3.0778086067647266, 21100, 3.0313898707024944, 21100, 0.47433996200561523), (3.100908531342923, 21100, 3.107153412235966, 21100, 0.5432279109954834)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.088494
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            25 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 124 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 250, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.005 s)
+
+[(3.090066856669754, 21100, 3.0967519405942125, 21100, 0.25694704055786133), (3.0547683888133106, 21100, 3.1279811465244682, 21100, 0.28676414489746094), (3.118299897043367, 21100, 3.0713368862039645, 21100, 0.33239102363586426), (3.074640933608723, 21100, 3.0337077458385457, 21100, 0.2127549648284912), (3.0992687430580403, 21100, 3.1071712886354734, 21100, 0.32741808891296387)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.087409
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            26 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 125 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 260, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.011 s)
+
+[(3.0898967601061815, 21100, 3.0967308342213844, 21100, 0.5917668342590332), (3.052218461509981, 21100, 3.12892070239361, 21100, 0.9545161724090576), (3.1206353910779168, 21100, 3.070079541672085, 21100, 0.7597148418426514), (3.074519212637981, 21100, 3.0333016104209123, 21100, 1.3994309902191162), (3.100070170212151, 21100, 3.1067527553334635, 21100, 0.27542996406555176)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.087468
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            27 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 126 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 270, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.0883668187485855, 21100, 3.099526236085714, 21100, 0.3598780632019043), (3.05408642051589, 21100, 3.1308270071582465, 21100, 0.31037282943725586), (3.1196077302155354, 21100, 3.0728494437406213, 21100, 0.25972604751586914), (3.0711258450378596, 21100, 3.0361836527569244, 21100, 0.3804769515991211), (3.1021595307038443, 21100, 3.1080381932758607, 21100, 0.2405240535736084)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.087069
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            28 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 127 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 280, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.002 s)
+
+[(3.0907879537014216, 21100, 3.097502231656407, 21100, 0.2731668949127197), (3.053314623213827, 21100, 3.1297741927561953, 21100, 0.35384583473205566), (3.1175740646598458, 21100, 3.072508968303324, 21100, 0.2634110450744629), (3.074124491104035, 21100, 3.034468059602778, 21100, 0.27765393257141113), (3.100494522415421, 21100, 3.1072984713065126, 21100, 0.28893399238586426)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.087259
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            29 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 128 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 290, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.0868305788028305, 21100, 3.09906306805573, 21100, 0.27748703956604004), (3.0528162311701252, 21100, 3.130433779837594, 21100, 0.3028120994567871), (3.1174077110010154, 21100, 3.073182844991552, 21100, 0.444260835647583), (3.07229615261566, 21100, 3.0354847746591354, 21100, 0.26535892486572266), (3.0994691332244355, 21100, 3.1079018741063638, 21100, 0.7732810974121094)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.085764
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            30 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 129 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 300, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.002 s)
+
+[(3.088030476087791, 21100, 3.0991903714543807, 21100, 0.2972450256347656), (3.0509335515791114, 21100, 3.1315926373827274, 21100, 0.32451796531677246), (3.116687253057835, 21100, 3.0742569272117106, 21100, 0.21030902862548828), (3.0747515334280986, 21100, 3.035507079383962, 21100, 0.7776379585266113), (3.098313003651878, 21100, 3.1090906089451287, 21100, 0.2854800224304199)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.085743
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            31 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 130 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 310, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.0862425986448367, 21100, 3.100039080423563, 21100, 0.2807590961456299), (3.0529385362514825, 21100, 3.129650235435534, 21100, 0.47477221488952637), (3.119048268480416, 21100, 3.072412641417825, 21100, 0.28398799896240234), (3.0734801472733726, 21100, 3.035631374949123, 21100, 0.20411014556884766), (3.097282799612761, 21100, 3.109998401312449, 21100, 0.4021890163421631)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.085798
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            32 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 131 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 320, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.0873642307419122, 21100, 3.100211720871803, 21100, 0.3801848888397217), (3.052132675536115, 21100, 3.1307013250136784, 21100, 0.43994712829589844), (3.116854459422749, 21100, 3.073301607517676, 21100, 0.29389190673828125), (3.073756810050248, 21100, 3.035661910220696, 21100, 0.3012430667877197), (3.098440447560481, 21100, 3.109159435607445, 21100, 0.3221249580383301)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.085710
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            33 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 132 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 330, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.089767089421784, 21100, 3.1000505035647032, 21100, 0.26169896125793457), (3.049998580438006, 21100, 3.1338718298720445, 21100, 0.304811954498291), (3.118082782975303, 21100, 3.07429016894741, 21100, 0.281203031539917), (3.071531718256866, 21100, 3.0383803894803068, 21100, 0.2992701530456543), (3.1001458510523525, 21100, 3.109699527899749, 21100, 0.36948490142822266)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.085905
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            34 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 133 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 340, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.005 s)
+
+[(3.085025305624011, 21100, 3.1015864460549754, 21100, 0.39098095893859863), (3.0498516472989903, 21100, 3.1327926965900312, 21100, 0.3672971725463867), (3.1160485725772142, 21100, 3.074593811876762, 21100, 0.30892109870910645), (3.070511787116148, 21100, 3.038347357222941, 21100, 0.23838186264038086), (3.0970443931586944, 21100, 3.1105407967032375, 21100, 0.23987984657287598)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.083696
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            35 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 134 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 350, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.002 s)
+
+[(3.085074128552044, 21100, 3.101347834816707, 21100, 0.4568510055541992), (3.0509231975853455, 21100, 3.132264156149205, 21100, 0.8612120151519775), (3.1149843897110983, 21100, 3.075549793660032, 21100, 0.39129090309143066), (3.0667906246521723, 21100, 3.039066768076531, 21100, 0.432858943939209), (3.0972376209997985, 21100, 3.110895111374732, 21100, 0.4015069007873535)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.083002
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            36 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 135 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 360, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.0843595962760375, 21100, 3.103074997905375, 21100, 0.3670670986175537), (3.0490478195327695, 21100, 3.133574265371361, 21100, 0.537121057510376), (3.115697939861774, 21100, 3.0760439003003435, 21100, 0.5275890827178955), (3.068894832762456, 21100, 3.0391671491676306, 21100, 0.37799692153930664), (3.0960073785193787, 21100, 3.112232360724504, 21100, 0.3351290225982666)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.082802
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            37 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 136 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 370, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.002 s)
+
+[(3.0869500574437567, 21100, 3.101561958335644, 21100, 0.6076850891113281), (3.0514129882550316, 21100, 3.1325263343902514, 21100, 0.33742308616638184), (3.11413365973412, 21100, 3.077058301504003, 21100, 0.5157499313354492), (3.069531821474899, 21100, 3.039641420750087, 21100, 0.3532528877258301), (3.0965981006080985, 21100, 3.111401236837321, 21100, 0.35192203521728516)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.083725
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            38 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 137 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 380, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.010 s)
+
+[(3.0854009986347855, 21100, 3.103036827440687, 21100, 0.4668149948120117), (3.049486787734918, 21100, 3.134301630785281, 21100, 0.5319681167602539), (3.113012853566652, 21100, 3.0768075984041925, 21100, 0.4033961296081543), (3.070664833774585, 21100, 3.038674214515013, 21100, 0.5831999778747559), (3.092436709565001, 21100, 3.1135115783951357, 21100, 0.446760892868042)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.082200
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            39 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 138 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 390, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.085901377511041, 21100, 3.101852224373643, 21100, 0.494373083114624), (3.04711484927723, 21100, 3.1348748906935673, 21100, 0.4646940231323242), (3.1173255612835136, 21100, 3.0752812045651887, 21100, 0.5696589946746826), (3.0684625239206147, 21100, 3.0405507424406917, 21100, 0.47318506240844727), (3.095231754771197, 21100, 3.112946645500024, 21100, 0.528886079788208)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.082807
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            40 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 139 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 400, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.003 s)
+
+[(3.08279826914647, 21100, 3.1033084418227963, 21100, 0.46272802352905273), (3.0456939536220244, 21100, 3.1355602507822513, 21100, 0.5087399482727051), (3.1122250321390434, 21100, 3.07725844266371, 21100, 0.4895620346069336), (3.06163471128511, 21100, 3.040545874885643, 21100, 0.5049848556518555), (3.0941410007097288, 21100, 3.1126999844238985, 21100, 0.5214040279388428)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.079299
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            41 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 140 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 410, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.085128123666172, 21100, 3.1032079960350085, 21100, 0.5125629901885986), (3.0478058873978506, 21100, 3.1349759846707457, 21100, 0.6944799423217773), (3.1124293065280195, 21100, 3.077872993262272, 21100, 0.5200650691986084), (3.0624538049236727, 21100, 3.0430613220828375, 21100, 0.5112349987030029), (3.093675614095866, 21100, 3.113003429491416, 21100, 0.5093839168548584)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.080299
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            42 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 141 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 420, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.0853732824361124, 21100, 3.1032076004236813, 21100, 0.4630420207977295), (3.0463139191306565, 21100, 3.1354683477781213, 21100, 0.6289360523223877), (3.111069490687704, 21100, 3.0770368733040705, 21100, 0.4777040481567383), (3.0660189286916553, 21100, 3.041574200778837, 21100, 0.5961670875549316), (3.0943566241465303, 21100, 3.1120756964684566, 21100, 0.5054950714111328)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.080626
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            43 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 142 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 430, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.006 s)
+
+[(3.081860230330163, 21100, 3.1053397140754893, 21100, 0.5200340747833252), (3.044240973737437, 21100, 3.1373288750031705, 21100, 0.6276471614837646), (3.114179283331637, 21100, 3.0768226092092115, 21100, 0.4864180088043213), (3.069167187090066, 21100, 3.041276649003935, 21100, 0.652381181716919), (3.0930110458083013, 21100, 3.1145841821633335, 21100, 0.5437929630279541)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.080492
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            44 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 143 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 440, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.005 s)
+
+[(3.083138886401267, 21100, 3.1050724950721325, 21100, 0.6149859428405762), (3.0471666363461263, 21100, 3.136360173319925, 21100, 0.7041878700256348), (3.1110056717236625, 21100, 3.0779964903183936, 21100, 0.8570129871368408), (3.0628672089415656, 21100, 3.04300360006726, 21100, 0.5885519981384277), (3.092004278521511, 21100, 3.113878341677044, 21100, 0.6291351318359375)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.079237
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            45 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 144 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 450, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.0846523878226138, 21100, 3.1052969665652874, 21100, 0.6968371868133545), (3.0454290787406166, 21100, 3.138592990319793, 21100, 0.7999608516693115), (3.110253181298743, 21100, 3.0814728748903155, 21100, 0.5853171348571777), (3.0629073883487608, 21100, 3.0452310194893486, 21100, 0.632504940032959), (3.0918803575704774, 21100, 3.114792899244051, 21100, 0.6049258708953857)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.079024
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            46 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 145 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 460, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.083090704799294, 21100, 3.105076901109094, 21100, 0.6028828620910645), (3.045873829876867, 21100, 3.1375119153259234, 21100, 0.6789112091064453), (3.107529043759978, 21100, 3.079897544436184, 21100, 0.7406439781188965), (3.0599399143855073, 21100, 3.0443227562760553, 21100, 0.6178338527679443), (3.092592882017244, 21100, 3.113959521811345, 21100, 0.5707321166992188)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.077805
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            47 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 146 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 470, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.081979095547217, 21100, 3.106130814821184, 21100, 0.6327500343322754), (3.044147703098821, 21100, 3.1380521768113687, 21100, 0.8085041046142578), (3.1101535617677194, 21100, 3.0811149901162516, 21100, 0.5728249549865723), (3.0658089337714554, 21100, 3.0427006741783935, 21100, 0.7329590320587158), (3.0943742176008904, 21100, 3.1145140675617333, 21100, 0.6536839008331299)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.079293
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            48 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 147 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 480, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.07805821206436, 21100, 3.1072416207679447, 21100, 0.6328849792480469), (3.0453648094054993, 21100, 3.137133761642821, 21100, 0.7601630687713623), (3.109295893315509, 21100, 3.07942770185827, 21100, 0.7950751781463623), (3.0663937487980313, 21100, 3.0420168527103644, 21100, 0.7270400524139404), (3.0897653406006724, 21100, 3.1161060903252076, 21100, 0.6461610794067383)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.077776
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            49 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 148 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 490, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.005 s)
+
+[(3.0817104058046487, 21100, 3.10716278700047, 21100, 0.6528148651123047), (3.0427798422758516, 21100, 3.140514421627331, 21100, 0.8593869209289551), (3.1093514631587347, 21100, 3.081252922292377, 21100, 0.8502278327941895), (3.059876427397386, 21100, 3.046852430528826, 21100, 0.7173619270324707), (3.094003225239236, 21100, 3.116483870530119, 21100, 0.5756709575653076)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.077544
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            50 / 50
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 149 trials
+Choosing next hyperparameters with grid...
+  {'cluster__n_bins_per_feature': 500, 'msm__score_k': 4, 'msm__score_method': 'vamp2'}
+(grid took 0.004 s)
+
+[(3.0797321342070414, 21100, 3.1065156131331864, 21100, 0.6918981075286865), (3.041429784071537, 21100, 3.140030543316145, 21100, 0.8796331882476807), (3.1043442976692224, 21100, 3.0818757043056557, 21100, 0.7801620960235596), (3.0598615848959145, 21100, 3.0454354435603537, 21100, 0.6174030303955078), (3.088480011739639, 21100, 3.1168343118379873, 21100, 0.6522071361541748)]
+[CV] Using MSMBuilder API n_samples averaging
+[CV]   n_train_samples: [21100, 21100, 21100, 21100, 21100]
+[CV]   n_test_samples: [21100, 21100, 21100, 21100, 21100]
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.074770
+(best score so far   = 3.095188)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+50/50 models fit successfully.
+time:         December 14, 2017 12:00 PM
+elapsed:      1 minute, 34 seconds.
+osprey worker exiting.
