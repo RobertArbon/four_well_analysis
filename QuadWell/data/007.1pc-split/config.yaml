@@ -7,8 +7,8 @@ strategy:
 search_space:
 
   cluster__n_bins_per_feature:
-    min: 10
-    max: 1000
+    min: 100
+    max: 10000
     num: 100
     var_type: int
     type: jump
