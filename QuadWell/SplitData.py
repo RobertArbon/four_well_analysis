@@ -2,6 +2,7 @@ import numpy as np
 from os.path import join
 import sys
 from glob import glob
+import joblib
 
 # def split_and_save(tau, in_dir, out_dir, fname, offset):
 #     x = np.load(join(in_dir, fname))
@@ -41,3 +42,4 @@ if __name__ == '__main__':
     print('Total number of pairs       : {}'.format(np.sum(X_pairs)))
     print('X_split shape               : {}'.format(X_split.shape))
     np.save(join(out_dir, 'X-{}.npy'.format(tau)), X_split)
+    joblib.dump(X_split, join(out_dir, 'X-{}.pickl'.format(tau)))
