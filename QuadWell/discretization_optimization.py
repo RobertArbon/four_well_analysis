@@ -1,4 +1,5 @@
 from pyemma.msm import MaximumLikelihoodMSM
+from pyemma.coordinates.util import DtrajReshape
 from msmbuilder.cluster import NDGrid
 from sklearn.pipeline import Pipeline
 import pickle
@@ -11,11 +12,12 @@ import numpy as np
 xmin, xmax = -1.2, 1.2
 tau = 25
 
-model = Pipeline([('cluster',NDGrid(min=xmin, max=xmax, n_bins_per_feature=200)),
-                  ('msm', MaximumLikelihoodMSM(lag=tau, score_method='vamp1'))])
+model = Pipeline([('reshape',  DtrajReshape()),
+                  ('cluster',NDGrid(min=xmin, max=xmax, n_bins_per_feature=200)),
+                  ('msm', MaximumLikelihoodMSM(lag=1, score_method='vamp1'))])
 
 
-# pickle.dump(model, open('model.pickl', 'wb'))
+pickle.dump(model, open('model_lag1.pickl', 'wb'))
 
 
 
