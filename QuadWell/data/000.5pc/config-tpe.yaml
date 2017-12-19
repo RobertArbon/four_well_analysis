@@ -1,5 +1,5 @@
 estimator:
-  pickle: model.pickl
+  pickle: model_vampe.pickl
 
 strategy:
 strategy:
