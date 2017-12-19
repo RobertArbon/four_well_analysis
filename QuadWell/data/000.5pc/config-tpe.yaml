@@ -33,7 +33,7 @@ dataset_loader:
     filenames: ./*.npy
 
 trials:
-    uri: sqlite:///osprey-trials.db
+    uri: sqlite:///osprey-trials-tpe.db
     project_name: tpe_gamma_25
 
 random_seed: 42
