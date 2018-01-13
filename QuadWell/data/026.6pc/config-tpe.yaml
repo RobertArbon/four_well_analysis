@@ -1,0 +1,38 @@
+estimator:
+  pickle: model_vampe.pickl
+
+strategy:
+strategy:
+    name: hyperopt_tpe
+    params:
+        seeds: 20
+        gamma: 0.25
+
+search_space:
+
+  cluster__n_bins_per_feature:
+    min: 10
+    max: 1000
+    type: int
+
+  msm__score_k:
+    min: 2
+    max: 6
+    type: int
+
+cv:
+    name: shufflesplit
+    params:
+      n_splits: 5
+      test_size: 0.5
+
+dataset_loader:
+  name: numpy
+  params:
+    filenames: ./*.npy
+
+trials:
+    uri: sqlite:///osprey-trials-tpe.db
+    project_name: tpe_gamma_25
+
+random_seed: 42
