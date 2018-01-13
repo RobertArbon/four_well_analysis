@@ -32,7 +32,7 @@ cv:
 dataset_loader:
   name: numpy
   params:
-    filenames: ../data/026.6pc/*.npy
+    filenames: /mnt/storage/home/ra15808/hyperparamopt/QuadWell/data/026.6pc/*.npy
 
 trials:
     uri: sqlite:///osprey-trials.db
