@@ -10,11 +10,11 @@ import numpy as np
 # X = [np.load(traj_path) for traj_path in traj_paths]
 
 xmin, xmax = -1.2, 1.2
-tau = 25
+tau = 1 
 
 model = Pipeline([('reshape',  DtrajReshape()),
                   ('cluster',NDGrid(min=xmin, max=xmax, n_bins_per_feature=200)),
-                  ('msm', MaximumLikelihoodMSM(lag=1, score_method='vamp1'))])
+                  ('msm', MaximumLikelihoodMSM(lag=tau, score_method='vamp1'))])
 
 
 pickle.dump(model, open('model_lag1.pickl', 'wb'))
