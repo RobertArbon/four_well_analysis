@@ -4,7 +4,7 @@ estimator:
                ('msm', MaximumLikelihoodMSM(
                     lag=25,
                     score_method='vampe',
-                    score_k=4))
+                    score_k=2))
               ])
   eval_scope: pyemma
 
@@ -36,4 +36,4 @@ dataset_loader:
 
 trials:
     uri: sqlite:///osprey-trials.db
-    project_name: k4
+    project_name: k2
