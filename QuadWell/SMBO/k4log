@@ -1,0 +1,193 @@
+======================================================================
+= osprey is a tool for machine learning hyperparameter optimization. =
+======================================================================
+
+osprey version:      1.2.0dev
+time:                January 10, 2018  1:37 PM
+hostname:            eduroam-0-35.nomadic.bris.ac.uk
+cwd:                 /Users/robert_arbon/Google Drive/Research/Hyperparameter_Optimisation/Code/QuadWell/SMBO
+pid:                 94689
+
+Loading config file:     config.yaml...
+
+Loading dataset...
+
+Dataset contains 100 element(s) with out labels
+The elements have shape: [(22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), (22443, 1), ...]
+Instantiated estimator:
+  Pipeline(memory=None,
+     steps=[('cluster', NDGrid(max=1.2, min=-1.2, n_bins_per_feature=200)), ('msm', MaximumLikelihoodMSM(connectivity='largest', count_mode='sliding',
+           dt_traj='1 step', lag=25, maxerr=1e-08, maxiter=1000000,
+           mincount_connectivity='1/n', reversible=True, score_k=4,
+           score_method='vampe', sparse=False, statdist_constraint=None))])
+Hyperparameter search space:
+  cluster__n_bins_per_feature	(int)         10 <= x <= 1000
+
+----------------------------------------------------------------------
+Beginning iteration                                             1 / 10
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 0 trials
+Choosing next hyperparameters with gp...
+  {'cluster__n_bins_per_feature': 112}
+(gp took 0.004 s)
+
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.066692
+(best score so far   = 3.066692)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             2 / 10
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 1 trials
+Choosing next hyperparameters with gp...
+  {'cluster__n_bins_per_feature': 21}
+(gp took 0.003 s)
+
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.035236
+(best score so far   = 3.066692)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             3 / 10
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 2 trials
+Choosing next hyperparameters with gp...
+  {'cluster__n_bins_per_feature': 238}
+(gp took 0.003 s)
+
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.063676
+(best score so far   = 3.066692)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             4 / 10
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 3 trials
+Choosing next hyperparameters with gp...
+  {'cluster__n_bins_per_feature': 328}
+(gp took 0.002 s)
+
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.076427
+(best score so far   = 3.076427)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             5 / 10
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 4 trials
+Choosing next hyperparameters with gp...
+  {'cluster__n_bins_per_feature': 303}
+(gp took 0.003 s)
+
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.066224
+(best score so far   = 3.076427)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             6 / 10
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 5 trials
+Choosing next hyperparameters with gp...
+  {'cluster__n_bins_per_feature': 1000}
+(gp took 1.909 s)
+
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.060073
+(best score so far   = 3.076427)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             7 / 10
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 6 trials
+Choosing next hyperparameters with gp...
+  {'cluster__n_bins_per_feature': 989}
+(gp took 1.678 s)
+
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.058403
+(best score so far   = 3.076427)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             8 / 10
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 7 trials
+Choosing next hyperparameters with gp...
+  {'cluster__n_bins_per_feature': 577}
+(gp took 2.471 s)
+
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.076480
+(best score so far   = 3.076480)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             9 / 10
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 8 trials
+Choosing next hyperparameters with gp...
+  {'cluster__n_bins_per_feature': 574}
+(gp took 2.821 s)
+
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.066800
+(best score so far   = 3.076480)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            10 / 10
+----------------------------------------------------------------------
+Loading trials database: sqlite:///osprey-trials.db...
+History contains: 9 trials
+Choosing next hyperparameters with gp...
+  {'cluster__n_bins_per_feature': 572}
+(gp took 2.402 s)
+
+Loading trials database: sqlite:///osprey-trials.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = 3.064953
+(best score so far   = 3.076480)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+10/10 models fit successfully.
+time:         January 10, 2018  1:39 PM
+elapsed:      2 minutes, 32 seconds.
+osprey worker exiting.
+/Users/robert_arbon/anaconda/envs/ml4dyn/lib/python3.5/site-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/Users/robert_arbon/anaconda/envs/ml4dyn/lib/python3.5/site-packages/sklearn/grid_search.py:42: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
+  DeprecationWarning)
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    3.4s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    1.6s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    3.9s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    5.8s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:    4.9s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   39.0s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   36.0s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   14.6s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   14.0s finished
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:   13.4s finished
