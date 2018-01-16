@@ -2,20 +2,14 @@ estimator:
   eval: |
     Pipeline([ ('cluster', NDGrid(min=-1.2, max=1.2, n_bins_per_feature=200)),
                ('msm', MaximumLikelihoodMSM(
-                    lag=25,
+                    lag=3,
                     score_method='vampe',
                     score_k=2))
               ])
   eval_scope: pyemma
 
 strategy:
-  name: gp
-  params:
-    seeds: 5
-    kernels:
-      - { name : GPy.kern.Matern52, params : {ARD : False}, options : {independent : True} }
-      - { name : GPy.kern.White, params : {}, options : {independent : True} }
-    acquisition: { name : ei, params : {} }
+  name: random
 
 search_space:
   cluster__n_bins_per_feature:
@@ -26,14 +20,14 @@ search_space:
 cv:
   name: shufflesplit
   params:
-    n_splits: 10
+    n_splits: 20
     test_size: 0.5
 
 dataset_loader:
   name: numpy
   params:
-    filenames: /mnt/storage/home/ra15808/hyperparamopt/QuadWell/data/026.6pc/*.npy
+    filenames: /mnt/storage/home/ra15808/hyperparamopt/QuadWell/data/100.0pc-128split/*.npy
 
 trials:
     uri: sqlite:///osprey-trials.db
-    project_name: k2
+    project_name: random_k2
