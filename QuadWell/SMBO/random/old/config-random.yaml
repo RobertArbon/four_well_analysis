@@ -4,21 +4,16 @@ estimator:
                ('msm', MaximumLikelihoodMSM(
                     lag=3,
                     score_method='vampe',
-                    score_k=6))
+                    score_k=2))
               ])
   eval_scope: pyemma
 
 strategy:
-  name: gp
-  params:
-    seeds: 10
-    kernels:
-      - { name : GPy.kern.Matern52, params : {ARD : False}, options : {independent : True} }
-    acquisition: { name : ei, params : {} }
+  name: random
 
 search_space:
   cluster__n_bins_per_feature:
-    min: 20
+    min: 10
     max: 1000
     type: int
 
@@ -35,4 +30,4 @@ dataset_loader:
 
 trials:
     uri: sqlite:///osprey-trials.db
-    project_name: k6
+    project_name: random_k2

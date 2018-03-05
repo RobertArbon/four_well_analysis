@@ -21,6 +21,7 @@ search_space:
     min: 20
     max: 1000
     type: int
+    warp: log
 
 cv:
   name: shufflesplit
