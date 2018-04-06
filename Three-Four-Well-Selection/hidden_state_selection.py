@@ -1,12 +1,11 @@
-print('start')
 from pyemma.msm import MaximumLikelihoodMSM, MaximumLikelihoodHMSM, estimate_hidden_markov_model
 from msmbuilder.cluster import NDGrid
-import pickle
 from glob import glob
 import numpy as np
 from scipy.stats import entropy
 import pandas as pd
-import bhmm
+import sys
+
 
 def bic(hmm):
     p = dof(hmm)
@@ -93,50 +92,46 @@ def get_dtrajs(X, xmin, xmax, m):
 
 
 if __name__ == '__main__':
-    print('in main')
+
+    tau = int(sys.argv[1])
+
     data_name = 'four-well-long'
     X = [np.load(x) for x in glob('Data/' + data_name + '/*npy')]
     xmin = np.min(np.concatenate(X))
     xmax = np.max(np.concatenate(X))
 
-    #ts = np.load('timescales.npy')
-    #taus = get_taus(ts)
-
     dtrajs = get_dtrajs(X, xmin=xmin, xmax=xmax, m=200)
     
-    erg_dtrajs = get_ergodic_set(dtrajs=dtrajs, tau=taus[0])
+    erg_dtrajs = get_ergodic_set(dtrajs=dtrajs, tau=tau)
     
     ks = np.arange(2,10)
     results = {'tau': [], 'k': [], 'bic': [], 'aic': [], 'icl': [], 'entropy': [], 'n_obs': [], 'dofs': []}
-    for tau in [taus[-1]]:
+    print('tau = ', tau)
+    for k in [ks[-1]]:
+        print('\tk = ', k)
 
-        print('tau = ', tau)
+        m = MaximumLikelihoodMSM(lag=tau, connectivity='largest', reversible=True)
+        m.fit(erg_dtrajs)
 
-        for k in [ks[-1]]:
-            print('\tk = ', k)
+        assert m.active_count_fraction == 1.0, 'Active count fraction not 1.0'
 
-            m = MaximumLikelihoodMSM(lag=tau, connectivity='largest', reversible=True)
-            m.fit(erg_dtrajs)
+        print('\tFitting HMM')
 
-            assert m.active_count_fraction == 1.0, 'Active count fraction not 1.0'
+        hmm = estimate_hidden_markov_model(dtrajs=erg_dtrajs, nstates=int(k), lag=tau, stationary=False,
+                                           reversible=True, connectivity='largest')
+        #hmm = MaximumLikelihoodHMSM(nstates=int(k), lag=tau, stationary=False, reversible=True, connectivity='largest', msm_init=m)
+        #hmm.fit(erg_dtrajs[:2])
 
-            print('\tFitting HMM')
+        results['k'].append(k)
+        results['tau'].append(tau)
+        results['bic'].append(bic(hmm))
+        results['aic'].append(aic(hmm))
+        results['icl'].append(icl(hmm))
+        results['entropy'].append(class_entropy(hmm))
+        results['dofs'].append(dof(hmm))
+        results['n_obs'].append(n_obs(hmm))
 
-            hmm = estimate_hidden_markov_model(dtrajs=erg_dtrajs, nstates=int(k), lag=tau, stationary=False, reversible=True, connectivity='largest')
-            #hmm = estimate_hidden_markov_model(dtrajs=erg_dtrajs[:2], nstates=2, lag=2) #, stationary=False, reversible=True, connectivity='largest')
-            #hmm = MaximumLikelihoodHMSM(nstates=int(k), lag=tau, stationary=False, reversible=True, connectivity='largest', msm_init=m)
-            #hmm.fit(erg_dtrajs[:2])
-
-            results['k'].append(k)
-            results['tau'].append(tau)
-            results['bic'].append(bic(hmm))
-            results['aic'].append(aic(hmm))
-            results['icl'].append(icl(hmm))
-            results['entropy'].append(class_entropy(hmm))
-            results['dofs'].append(dof(hmm))
-            results['n_obs'].append(n_obs(hmm))
-
-    pd.DataFrame(results).to_pickle('h_state_selection.p')
+    pd.DataFrame(results).to_pickle('h_state_selection_tau-{}.p'.format(tau))
 
 
 
