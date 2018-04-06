@@ -99,8 +99,8 @@ if __name__ == '__main__':
     xmin = np.min(np.concatenate(X))
     xmax = np.max(np.concatenate(X))
 
-    ts = np.load('timescales.npy')
-    taus = get_taus(ts)
+    #ts = np.load('timescales.npy')
+    #taus = get_taus(ts)
 
     dtrajs = get_dtrajs(X, xmin=xmin, xmax=xmax, m=200)
     
@@ -108,11 +108,11 @@ if __name__ == '__main__':
     
     ks = np.arange(2,10)
     results = {'tau': [], 'k': [], 'bic': [], 'aic': [], 'icl': [], 'entropy': [], 'n_obs': [], 'dofs': []}
-    for tau in taus:
+    for tau in [taus[-1]]:
 
         print('tau = ', tau)
 
-        for k in ks:
+        for k in [ks[-1]]:
             print('\tk = ', k)
 
             m = MaximumLikelihoodMSM(lag=tau, connectivity='largest', reversible=True)
@@ -122,7 +122,7 @@ if __name__ == '__main__':
 
             print('\tFitting HMM')
 
-            hmm = estimate_hidden_markov_model(dtrajs=erg_dtrajs[:2], nstates=int(k), lag=tau, stationary=False, reversible=True, connectivity='largest')
+            hmm = estimate_hidden_markov_model(dtrajs=erg_dtrajs, nstates=int(k), lag=tau, stationary=False, reversible=True, connectivity='largest')
             #hmm = estimate_hidden_markov_model(dtrajs=erg_dtrajs[:2], nstates=2, lag=2) #, stationary=False, reversible=True, connectivity='largest')
             #hmm = MaximumLikelihoodHMSM(nstates=int(k), lag=tau, stationary=False, reversible=True, connectivity='largest', msm_init=m)
             #hmm.fit(erg_dtrajs[:2])
