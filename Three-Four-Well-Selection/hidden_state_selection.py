@@ -1,11 +1,12 @@
-from pyemma.msm import MaximumLikelihoodMSM, MaximumLikelihoodHMSM
+print('start')
+from pyemma.msm import MaximumLikelihoodMSM, MaximumLikelihoodHMSM, estimate_hidden_markov_model
 from msmbuilder.cluster import NDGrid
 import pickle
 from glob import glob
 import numpy as np
 from scipy.stats import entropy
 import pandas as pd
-
+import bhmm
 
 def bic(hmm):
     p = dof(hmm)
@@ -92,10 +93,9 @@ def get_dtrajs(X, xmin, xmax, m):
 
 
 if __name__ == '__main__':
-
+    print('in main')
     data_name = 'four-well-long'
-
-    X = [np.load(x) for x in glob('data/' + data_name + '/*npy')]
+    X = [np.load(x) for x in glob('Data/' + data_name + '/*npy')]
     xmin = np.min(np.concatenate(X))
     xmax = np.max(np.concatenate(X))
 
@@ -103,10 +103,10 @@ if __name__ == '__main__':
     taus = get_taus(ts)
 
     dtrajs = get_dtrajs(X, xmin=xmin, xmax=xmax, m=200)
-
+    
     erg_dtrajs = get_ergodic_set(dtrajs=dtrajs, tau=taus[0])
-
-    ks = np.arange(2, 10)
+    
+    ks = np.arange(2,10)
     results = {'tau': [], 'k': [], 'bic': [], 'aic': [], 'icl': [], 'entropy': [], 'n_obs': [], 'dofs': []}
     for tau in taus:
 
@@ -121,10 +121,12 @@ if __name__ == '__main__':
             assert m.active_count_fraction == 1.0, 'Active count fraction not 1.0'
 
             print('\tFitting HMM')
-            hmm = MaximumLikelihoodHMSM(nstates=int(k), lag=tau, stationary=False, reversible=True,
-                                        connectivity='largest',
-                                        msm_init=m)
-            hmm.fit(erg_dtrajs)
+
+            hmm = estimate_hidden_markov_model(dtrajs=erg_dtrajs[:2], nstates=int(k), lag=tau, stationary=False, reversible=True, connectivity='largest')
+            #hmm = estimate_hidden_markov_model(dtrajs=erg_dtrajs[:2], nstates=2, lag=2) #, stationary=False, reversible=True, connectivity='largest')
+            #hmm = MaximumLikelihoodHMSM(nstates=int(k), lag=tau, stationary=False, reversible=True, connectivity='largest', msm_init=m)
+            #hmm.fit(erg_dtrajs[:2])
+
             results['k'].append(k)
             results['tau'].append(tau)
             results['bic'].append(bic(hmm))
